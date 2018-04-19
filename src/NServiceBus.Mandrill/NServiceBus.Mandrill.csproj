@@ -55,9 +55,7 @@
   <ItemGroup>
     <Compile Include="MandrillBusExtensions.cs" />
     <Compile Include="ConfigureMandrill.cs" />
-    <Compile Include="Mandrill.cs" />
     <Compile Include="MandrillEmailResult.cs" />
-    <Compile Include="MandrillSatellite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendMandrillEmail.cs" />
   </ItemGroup>
