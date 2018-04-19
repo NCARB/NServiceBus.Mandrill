@@ -1,4 +1,6 @@
-﻿namespace NServiceBus.AcceptanceTests.EndpointTemplates
+﻿using NServiceBus.Settings.NServiceBus;
+
+namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +18,7 @@
             return dictionary[key];
         }
 
-        public static void DefineTransport(this BusConfiguration builder, IDictionary<string, string> settings, Type endpointBuilderType)
+        public static void DefineTransport(this EndpointConfiguration builder, IDictionary<string, string> settings, Type endpointBuilderType)
         {
             if (!settings.ContainsKey("Transport"))
             {
@@ -44,7 +46,7 @@
             builder.UseTransport(transportType).ConnectionString(settings["Transport.ConnectionString"]);
         }
 
-        public static void DefineTransactions(this BusConfiguration config, IDictionary<string, string> settings)
+        public static void DefineTransactions(this EndpointConfiguration config, IDictionary<string, string> settings)
         {
             if (settings.ContainsKey("Transactions.Disable"))
             {
@@ -56,7 +58,7 @@
             }
         }
 
-        public static void DefinePersistence(this BusConfiguration config, IDictionary<string, string> settings)
+        public static void DefinePersistence(this EndpointConfiguration config, IDictionary<string, string> settings)
         {
             if (!settings.ContainsKey("Persistence"))
             {
@@ -83,7 +85,7 @@
             config.UsePersistence(persistenceType);
         }
 
-        public static void DefineBuilder(this BusConfiguration config, IDictionary<string, string> settings)
+        public static void DefineBuilder(this EndpointConfiguration config, IDictionary<string, string> settings)
         {
             if (!settings.ContainsKey("Builder"))
             {

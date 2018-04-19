@@ -10,7 +10,7 @@ namespace Sample
 {
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
-        public void Customize(BusConfiguration configuration)
+        public void Customize(EndpointConfiguration configuration)
         {
             var apiKey = Environment.GetEnvironmentVariable("MANDRILL_API_KEY", EnvironmentVariableTarget.Process) ?? 
                 ConfigurationManager.AppSettings["MANDRILL_API_KEY"];
