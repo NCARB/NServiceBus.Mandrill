@@ -19,7 +19,6 @@ namespace NServiceBus.Mandrill
         }
 
         protected internal SendMandrillEmail(MandrillMessage message)
-            : this()
         {
             MessageBody = SerializeMessageBody(message);
         }

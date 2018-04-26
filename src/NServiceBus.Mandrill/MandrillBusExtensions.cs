@@ -9,13 +9,13 @@ namespace NServiceBus
 {
     public static class MandrillBusExtensions
     {
-        public static Task SendEmail(this IPipelineContext bus, MandrillMessage message)
+        public static Task SendEmail(this IPipelineContext context, MandrillMessage message)
         {
             var msg = new SendMandrillEmail(message);
-            return Send(bus, msg);
+            return Send(context, msg);
         }
 
-        public static Task SendEmailTemplate(this IPipelineContext bus, MandrillMessage message, string templateName,
+        public static Task SendEmailTemplate(this IPipelineContext context, MandrillMessage message, string templateName,
             IList<MandrillTemplateContent> templateContents = null)
         {
             if (templateName == null)
@@ -25,21 +25,21 @@ namespace NServiceBus
 
             var msg = new SendMandrillEmail(message, templateName, templateContents);
 
-            return Send(bus, msg);
+            return Send(context, msg);
         }
 
-        private static Task Send(IPipelineContext bus, SendMandrillEmail msg)
+        private static Task Send(IPipelineContext context, SendMandrillEmail msg)
         {
-            return bus.SendLocal(msg);
+            return context.SendLocal(msg);
         }
 
-        public static Task SendEmail(this IMessageSession bus, MandrillMessage message)
+        public static Task SendEmail(this IMessageSession session, MandrillMessage message)
         {
             var msg = new SendMandrillEmail(message);
-            return Send(bus, msg);
+            return Send(session, msg);
         }
 
-        public static Task SendEmailTemplate(this IMessageSession bus, MandrillMessage message, string templateName,
+        public static Task SendEmailTemplate(this IMessageSession session, MandrillMessage message, string templateName,
             IList<MandrillTemplateContent> templateContents = null)
         {
             if (templateName == null)
@@ -49,12 +49,12 @@ namespace NServiceBus
 
             var msg = new SendMandrillEmail(message, templateName, templateContents);
 
-            return Send(bus, msg);
+            return Send(session, msg);
         }
 
-        private static Task Send(IMessageSession bus, SendMandrillEmail msg)
+        private static Task Send(IMessageSession session, SendMandrillEmail msg)
         {
-            return bus.SendLocal(msg);
+            return session.SendLocal(msg);
         }
     }
 }
