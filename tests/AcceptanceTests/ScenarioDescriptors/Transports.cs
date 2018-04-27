@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
+﻿/*namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
 {
     using System;
     using System.Collections.Generic;
@@ -93,4 +93,4 @@
 
 
     }
-}
+}*/

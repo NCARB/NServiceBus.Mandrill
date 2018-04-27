@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.AcceptanceTests.EndpointTemplates
+﻿/*namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
     using System;
     using System.Diagnostics;
@@ -126,4 +126,4 @@
             Trace.WriteLine(string.Format(format, args));
         }
     }
-}
+}*/

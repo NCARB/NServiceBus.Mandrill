@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+/*using System.Threading.Tasks;
 
 namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
@@ -60,4 +60,4 @@ namespace NServiceBus.AcceptanceTests.EndpointTemplates
             throw new NotImplementedException();
         }
     }
-}
+}*/

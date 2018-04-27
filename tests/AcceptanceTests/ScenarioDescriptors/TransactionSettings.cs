@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿/*
+using System.Collections.Generic;
 
 namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
 {
@@ -35,3 +36,4 @@ namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
         };
     }
 }
+*/

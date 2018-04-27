@@ -1,4 +1,4 @@
-﻿using NServiceBus.Settings.NServiceBus;
+﻿/*using NServiceBus.Settings.NServiceBus;
 
 namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
@@ -118,4 +118,4 @@ namespace NServiceBus.AcceptanceTests.EndpointTemplates
             config.UseContainer(builderType);
         }
     }
-}
+}*/

@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
+﻿/*namespace NServiceBus.AcceptanceTests.ScenarioDescriptors
 {
     using NServiceBus.AcceptanceTesting.Support;
 
@@ -11,4 +11,4 @@
             Add(TransactionSettings.NoTransaction);
         }
     }
-}
+}*/
