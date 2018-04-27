@@ -19,13 +19,11 @@ namespace NServiceBus.Mandrill
         }
 
         protected internal SendMandrillEmail(MandrillMessage message)
-            : this()
         {
             MessageBody = SerializeMessageBody(message);
         }
 
         protected internal SendMandrillEmail(MandrillMessage message, string templateName, IEnumerable<MandrillTemplateContent> templateContents)
-            : this()
         {
             MessageBody = SerializeMessageBody(message);
             TemplateName = templateName;

@@ -1,3 +1,5 @@
+/*using System.Threading.Tasks;
+
 namespace NServiceBus.AcceptanceTests.EndpointTemplates
 {
     using System;
@@ -10,7 +12,7 @@ namespace NServiceBus.AcceptanceTests.EndpointTemplates
 
     public class DefaultPublisher : IEndpointSetupTemplate
     {
-        public BusConfiguration GetConfiguration(RunDescriptor runDescriptor, EndpointConfiguration endpointConfiguration, IConfigurationSource configSource, Action<BusConfiguration> configurationBuilderCustomization)
+        public EndpointConfiguration GetConfiguration(RunDescriptor runDescriptor, EndpointConfiguration endpointConfiguration, IConfigurationSource configSource, Action<EndpointConfiguration> configurationBuilderCustomization)
         {
             return new DefaultServer(new List<Type> { typeof(SubscriptionTracer), typeof(SubscriptionTracer.Registration) }).GetConfiguration(runDescriptor, endpointConfiguration, configSource, b =>
             {
@@ -51,5 +53,11 @@ namespace NServiceBus.AcceptanceTests.EndpointTemplates
                 }
             }
         }
+
+        public Task<EndpointConfiguration> GetConfiguration(RunDescriptor runDescriptor, EndpointCustomizationConfiguration endpointConfiguration,
+            IConfigurationSource configSource, Action<EndpointConfiguration> configurationBuilderCustomization)
+        {
+            throw new NotImplementedException();
+        }
     }
-}
+}*/

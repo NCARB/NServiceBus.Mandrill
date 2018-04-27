@@ -13,8 +13,10 @@ namespace Tests
 
         protected override void Setup(FeatureConfigurationContext context)
         {
-            var q = context.Settings.Get<Address>("MasterNode.Address").SubScope("Mandrill");
-            MandrillBusExtensions.GetMandrillQueueFunc = bus => q;
+            var q = context.Settings.Get("Mandrill");
+
+            //var q = context.Settings.Get<Address>("MasterNode.Address").SubScope("Mandrill");
+            //MandrillBusExtensions.
         }
     }
 }

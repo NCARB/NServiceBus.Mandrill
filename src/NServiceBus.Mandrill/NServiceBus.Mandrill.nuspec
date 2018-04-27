@@ -12,7 +12,7 @@
     <tags>Mandrill NServiceBus Email MailChimp</tags>
     <dependencies>
       <dependency id="Mandrill.net" version="[2.0.22,3)" />
-      <dependency id="NServiceBus" version="[5.0,6.0)"/>
+      <dependency id="NServiceBus" version="[6.0,7.0)"/>
     </dependencies>
   </metadata>  
 </package> 

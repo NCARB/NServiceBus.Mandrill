@@ -1,30 +1,32 @@
-﻿using Mandrill.Model;
+﻿using System.Threading.Tasks;
+using Mandrill.Model;
 using NServiceBus;
 
 namespace Tests
 {
-    internal class SendEmailTestHandler : IHandleMessages<MandrillSendTest.SendEmail>
+    internal class SendEmailTestHandler : IHandleMessages<MandrillSendTest.SendEmail>, IHandleMessages<MandrillSendTest.SendTemplateEmail>
     {
-        public IBus Bus { get; set; }
 
-        public void Handle(MandrillSendTest.SendEmail message)
+        public Task Handle(MandrillSendTest.SendEmail message, IMessageHandlerContext context)
         {
             var email = new MandrillMessage
             {
                 Subject = "This is a test",
                 Text = "Hello World"
             };
-            Bus.SendEmail(email);
+
+            return context.SendEmail(email);
         }
 
-        public void Handle(MandrillSendTest.SendTemplateEmail message)
+        public Task Handle(MandrillSendTest.SendTemplateEmail message, IMessageHandlerContext context)
         {
             var email = new MandrillMessage
             {
                 Subject = "This is a test",
                 Text = "Hello World"
             };
-            Bus.SendEmailTemplate(email, "test-template");
+
+            return context.SendEmailTemplate(email, "email-template");
         }
     }
 }
