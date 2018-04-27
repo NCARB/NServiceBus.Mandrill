@@ -3,11 +3,11 @@
   <metadata>
     <id>NServiceBus.Mandrill</id>
     <version>$version$</version>
-    <authors>feinoujc</authors>
+    <authors>NCARB (forked from feinoujc)</authors>
     <owners>feinoujc</owners>
     <title>NServiceBus.Mandrill</title>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <projectUrl>https://github.com/feinoujc/NServiceBus.Mandrill</projectUrl>
+    <projectUrl>https://github.com/NCARB/NServiceBus.Mandrill</projectUrl>
     <description>NServiceBus feature to send Mandrill API requests over the bus</description>
     <tags>Mandrill NServiceBus Email MailChimp</tags>
     <dependencies>
